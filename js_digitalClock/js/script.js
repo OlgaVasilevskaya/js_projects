@@ -1,14 +1,14 @@
 setInterval(() => {
   let date = new Date();
   let day = date.getDay();
-  let days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+  let DAY_NAMES = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   let hours = date.getHours();
   let minutes = date.getMinutes();
   let night = 'AM';
   const time = document.querySelector('#time');
 
   if (hours > 12) {
-    hours = hours - 12;
+    hours -= 12;
     night = 'PM';
   }
 
@@ -20,7 +20,7 @@ setInterval(() => {
     minutes = '0' + minutes;
   }
 
-  time.textContent = days[day] + ' ' + hours + ' : ' + minutes + ' : ' + night;
+  time.textContent = `${DAY_NAMES[day]} ${hours} : ${minutes} : ${night}`;
 
   setTimeout(setInterval, 200);
 });
