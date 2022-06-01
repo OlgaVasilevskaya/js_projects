@@ -13,13 +13,11 @@ createItem = () => {
   item.textContent = "- " + document.querySelector("#user-input").value;
 
   item.addEventListener("click", () => {
-    if(item.style.textDecoration != "line-through") {
-      item.style.textDecoration = "line-through";
-    } else {
-      item.style.textDecoration = "none";
-    }
+    item.style.textDecoration = item.style.textDecoration !== "line-through"
+     ? "line-through"
+      : "none";
   });
 
-  document.querySelector("#items").appendChild(item); //вконце родителя добавляется элемент
+  document.querySelector("#items").appendChild(item);
   document.querySelector("#user-input").value = "";
 };
