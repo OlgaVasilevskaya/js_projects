@@ -9,7 +9,9 @@ apiRequest = () => {
 
   document.querySelector(".item").textContent = "";
 
-  const url = 'https://api.unsplash.com/search/photos?query=`THIS`&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo';
+  const value = 'nature';
+
+  const url = `https://api.unsplash.com/search/photos?query=${value}&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
 
   fetch(url)
     .then(response => {
@@ -25,12 +27,17 @@ apiRequest = () => {
 
 loadImages = (data) => {
 
-  let images = data.results;
+  for(let i = 0; i < data.results.length; i++){
+    const image = document.createElement("div");
+    image.className = "img";
 
-  for(let i = 0;i < images.length;i++){
-    let image = document.createElement("div");
+    console.log('image', image);
 
-    div.style.background = `url(${image.urls.full})`;
+    image.style.backgroundImage = `url(${data.results[i].urls.full})`;
+
+    image.addEventListener("dblclick", function(){
+      window.open(data.results[i].links.download, '_blank');
+    });
 
     document.querySelector(".item").appendChild(image);
   }

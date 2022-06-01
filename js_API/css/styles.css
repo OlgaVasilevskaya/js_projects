@@ -53,12 +53,16 @@ nav {
   flex-wrap: wrap;
 }
 
-.container .item img {
+.container .item .img {
   width: 380px;
-  height: 214px;
+  height: 230px;
   margin: 15px 0;
   background-position: center;
   background-size: cover;
   border-radius: 2px;
   cursor: pointer;
+}
+
+.container .item .img:hover {
+  border: 5px solid orange;
 }
