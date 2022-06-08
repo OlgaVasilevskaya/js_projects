@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Mumblers Demo';
+  src: url('./MumblersDemoRegular.ttf') format('truetype');
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffa500;
+  font-family: 'Mumblers Demo';
+}
+
+.container {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content:center;
+}
+
+.container .list {
+  width: 600px;
+  min-height: 100vh;
+  padding-top: 20px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+  box-shadow: 10px 10px 24px 0px rgb(0 0 0 / 50%);
+}
+
+.container .list h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #262626;
+}
+
+.container .list .input-container {
+  padding-top: 20px;
+}
+
+.container .list .input-container input {
+  outline: 0;
+  border: 0;
+  width: 85%;
+  font-size: 1.5rem;
+  border-bottom: 3px solid lightgray;
+}
+
+.container .list .input-container i {
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #ffb6c1;
+}
+
+.container .list #items {
+  padding-top: 30px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #262626;
+  font-size: 1em;
+}
