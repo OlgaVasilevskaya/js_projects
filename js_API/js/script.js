@@ -1,12 +1,11 @@
 document.querySelector("#input").addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
+  if (e.key === "Enter") {
     apiRequest();
   }
 });
 
 
 apiRequest = () => {
-
   document.querySelector(".item").textContent = "";
 
   const value = 'nature';
@@ -16,6 +15,7 @@ apiRequest = () => {
   fetch(url)
     .then(response => {
       if (!response.ok) throw Error(response.statusText);
+
       return response.json();
      })
      .then(data => {
@@ -26,12 +26,9 @@ apiRequest = () => {
 
 
 loadImages = (data) => {
-
   for(let i = 0; i < data.results.length; i++){
     const image = document.createElement("div");
     image.className = "img";
-
-    console.log('image', image);
 
     image.style.backgroundImage = `url(${data.results[i].urls.full})`;
 
