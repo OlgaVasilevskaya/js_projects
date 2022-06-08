@@ -5,7 +5,7 @@ document.querySelector("#input").addEventListener("keydown", (e) => {
 });
 
 
-apiRequest = () => {
+const apiRequest = () => {
   document.querySelector(".item").textContent = "";
 
   const value = 'nature';
@@ -25,7 +25,7 @@ apiRequest = () => {
 };
 
 
-loadImages = (data) => {
+const loadImages = (data) => {
   for(let i = 0; i < data.results.length; i++){
     const image = document.createElement("div");
     image.className = "img";
